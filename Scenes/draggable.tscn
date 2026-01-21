@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfuvp6xyyamu5"]
+
+[ext_resource type="Script" uid="uid://bfa2w7nalmufo" path="res://addons/draggablesprite2d/src/draggablesprite2d.gd" id="1_tdygm"]
+[ext_resource type="Texture2D" uid="uid://bdkm82fi3tx76" path="res://icon.svg" id="2_ff7nk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdygm"]
+size = Vector2(127, 127)
+
+[node name="Node2D" type="RigidBody2D"]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tdygm")
+debug_color = Color(0.994727, 0, 0.21736, 0.42)
+
+[node name="DraggableSprite2D" type="Area2D" parent="."]
+disable_mode = 1
+linear_damp_space_override = 3
+linear_damp = 41.514
+script = ExtResource("1_tdygm")
+texture = ExtResource("2_ff7nk")
+metadata/_custom_type_script = "uid://bfa2w7nalmufo"

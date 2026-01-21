@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwyafj3nxrugp"
+path="res://.godot/imported/Beach Sand Bank Loop.mp3-e2b2f80116575cc36311a047c1eaf6ce.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGS/Beach Sand Bank Loop.mp3"
+dest_files=["res://.godot/imported/Beach Sand Bank Loop.mp3-e2b2f80116575cc36311a047c1eaf6ce.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btjv64gsu7e8x"
+path="res://.godot/imported/Misc Lo Fi Strum.wav-f1f6e8ae7894d39dd39220f9cfd79ae5.sample"
+
+[deps]
+
+source_file="res://Audio/MFX/Misc Lo Fi Strum.wav"
+dest_files=["res://.godot/imported/Misc Lo Fi Strum.wav-f1f6e8ae7894d39dd39220f9cfd79ae5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

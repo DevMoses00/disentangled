@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bb040lw3hrfcl"
+path="res://.godot/imported/Shoe Step Sand Medium B.wav-f59c8251d1ae7ca8472f0fa8f11a0daf.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Shoe Step Sand Medium B.wav"
+dest_files=["res://.godot/imported/Shoe Step Sand Medium B.wav-f59c8251d1ae7ca8472f0fa8f11a0daf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

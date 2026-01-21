@@ -1,0 +1,730 @@
+[gd_scene load_steps=66 format=3 uid="uid://d3lvi3jmm6rbu"]
+
+[ext_resource type="Script" uid="uid://c1oadhhvaepfi" path="res://Scenes/end.gd" id="1_ika66"]
+[ext_resource type="Texture2D" uid="uid://b86lgdi3ixbg3" path="res://Art/beach_bg.png" id="1_ql4ve"]
+[ext_resource type="Shader" uid="uid://cb3lnt74cap5v" path="res://Shaders/world_1.gdshader" id="2_q5l5q"]
+[ext_resource type="Texture2D" uid="uid://cv7qp5fyqeocv" path="res://Art/waves.png" id="3_t3us6"]
+[ext_resource type="Script" uid="uid://b27jd4lupg6e1" path="res://Scripts/waves.gd" id="4_d0yn4"]
+[ext_resource type="Shader" uid="uid://bpuuaesvar65o" path="res://Shaders/jolt.gdshader" id="5_t3us6"]
+[ext_resource type="Texture2D" uid="uid://dqgj58v6kjtew" path="res://Art/M.png" id="6_d0yn4"]
+[ext_resource type="Texture2D" uid="uid://sm507mdgohjx" path="res://Art/portraits_full/C/C1-0.png" id="7_iv03m"]
+[ext_resource type="Texture2D" uid="uid://d2gej3odsblcq" path="res://Art/portraits_full/C/C1-1.png" id="8_076sf"]
+[ext_resource type="Texture2D" uid="uid://0hcha6ybfnf0" path="res://Art/portraits_full/A/A2-0.png" id="8_hrrsx"]
+[ext_resource type="Texture2D" uid="uid://dhgxw8v4etit7" path="res://Art/portraits_full/A/a1-0.png" id="8_shnee"]
+[ext_resource type="Texture2D" uid="uid://danhiq3pf7rpp" path="res://Art/portraits_full/B/B2-0.png" id="9_ay106"]
+[ext_resource type="Texture2D" uid="uid://6nw0dofdym3c" path="res://Art/portraits_full/C/C1-2.png" id="9_pa61i"]
+[ext_resource type="Texture2D" uid="uid://yd2timg5ser1" path="res://Art/portraits_full/A/a1-1.png" id="10_71tud"]
+[ext_resource type="Texture2D" uid="uid://davhbhb3mvfme" path="res://Art/portraits_full/A/A2-1.png" id="10_ciuc6"]
+[ext_resource type="Texture2D" uid="uid://diyl3p7j02wbq" path="res://Art/J.png" id="10_h8xgm"]
+[ext_resource type="Texture2D" uid="uid://i0fujnl70vw1" path="res://Art/portraits_full/C/C2-0.png" id="11_ika66"]
+[ext_resource type="Texture2D" uid="uid://dglbv04bfd6vm" path="res://Art/portraits_full/B/B2-1.png" id="12_c1bdo"]
+[ext_resource type="Texture2D" uid="uid://b2irr4an0avs4" path="res://Art/portraits_full/A/A2-2.png" id="12_n6kny"]
+[ext_resource type="Texture2D" uid="uid://dk6yhf2coj0ej" path="res://Art/portraits_full/A/a1-2.png" id="12_qpkfc"]
+[ext_resource type="Texture2D" uid="uid://of1xcky3hveu" path="res://Art/portraits_full/C/C2-1.png" id="12_s1bme"]
+[ext_resource type="Texture2D" uid="uid://c2a3lgj6das3h" path="res://Art/portraits_full/C/C2-2.png" id="13_g5hsy"]
+[ext_resource type="Texture2D" uid="uid://cv2o3yt7vjqrv" path="res://Art/hand_games/hm_final.png" id="15_s1bme"]
+[ext_resource type="Texture2D" uid="uid://d25x0gt8cir1a" path="res://Art/portraits_full/B/B2-2.png" id="15_xhfbn"]
+[ext_resource type="Script" uid="uid://bucsyk0my0n1e" path="res://Scripts/slips-h.gd" id="15_yb8mu"]
+[ext_resource type="Script" uid="uid://spppkvsvcity" path="res://Scripts/slips.gd" id="17_qfvq4"]
+[ext_resource type="Texture2D" uid="uid://b4y5oqvinufl4" path="res://Art/hand_games/hj_final.png" id="18_pmfat"]
+[ext_resource type="Script" uid="uid://cnnw3yj3kwy0r" path="res://Scripts/barrier.gd" id="19_qfvq4"]
+[ext_resource type="Texture2D" uid="uid://ds4vas5iui81h" path="res://Art/portraits_full/B/B1-0.png" id="19_sbv6n"]
+[ext_resource type="Texture2D" uid="uid://b6wl0ln6bpnxs" path="res://Art/portraits_full/B/B1-1.png" id="22_7ecj4"]
+[ext_resource type="Texture2D" uid="uid://dchpec4scbsc" path="res://Art/portraits_full/B/B1-2.png" id="25_xar77"]
+[ext_resource type="Shader" uid="uid://v8n8aqjlcgr" path="res://Shaders/wiggle.gdshader" id="32_sbv6n"]
+[ext_resource type="Texture2D" uid="uid://b1c0inb6kny4c" path="res://Shaders/white-noise-screen.png" id="33_7ecj4"]
+[ext_resource type="FontFile" uid="uid://5nfnkgru3213" path="res://Font/Mansalva-Regular.ttf" id="34_xar77"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx0vo"]
+shader = ExtResource("2_q5l5q")
+shader_parameter/wave_speed = 3.0
+shader_parameter/wave_scale = 44.15
+shader_parameter/distortion_strength = 0.005
+shader_parameter/player_velocity = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hfoao"]
+shader = ExtResource("5_t3us6")
+shader_parameter/jolt_strength_pixels = 1.0
+shader_parameter/jumps_per_second = 4.0
+shader_parameter/jitter_scale = 1.0
+shader_parameter/seed = 123.0
+shader_parameter/soften = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yb8mu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qfvq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hrrsx")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ay106")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ika66")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmfat"]
+shader = ExtResource("5_t3us6")
+shader_parameter/jolt_strength_pixels = 1.938
+shader_parameter/jumps_per_second = 5.0
+shader_parameter/jitter_scale = 0.5
+shader_parameter/seed = 123.0
+shader_parameter/soften = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgyfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ciuc6")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_c1bdo")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_s1bme")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shnee"]
+shader = ExtResource("2_q5l5q")
+shader_parameter/wave_speed = 0.3
+shader_parameter/wave_scale = 30.0
+shader_parameter/distortion_strength = 0.005
+shader_parameter/player_velocity = Vector2(0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71tud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_n6kny")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_xhfbn")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_g5hsy")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_qpkfc"]
+offsets = PackedFloat32Array(0, 0.506494, 1)
+colors = PackedColorArray(0.974771, 0.613519, 0.368774, 1, 0.534985, 0.293827, 0.180589, 1, 0.592487, 0.3187, 1.92523e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hrrsx"]
+gradient = SubResource("Gradient_qpkfc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iv03m"]
+shader = ExtResource("5_t3us6")
+shader_parameter/jolt_strength_pixels = 1.0
+shader_parameter/jumps_per_second = 4.0
+shader_parameter/jitter_scale = 1.0
+shader_parameter/seed = 123.0
+shader_parameter/soften = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vytj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8xgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_shnee")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_sbv6n")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_iv03m")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ika66"]
+shader = ExtResource("5_t3us6")
+shader_parameter/jolt_strength_pixels = 1.938
+shader_parameter/jumps_per_second = 5.0
+shader_parameter/jitter_scale = 0.5
+shader_parameter/seed = 123.0
+shader_parameter/soften = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1bme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_71tud")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_7ecj4")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_076sf")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g5hsy"]
+shader = ExtResource("2_q5l5q")
+shader_parameter/wave_speed = 0.3
+shader_parameter/wave_scale = 30.0
+shader_parameter/distortion_strength = 0.005
+shader_parameter/player_velocity = Vector2(0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hfoao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_qpkfc")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_xar77")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_pa61i")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_et3xt"]
+offsets = PackedFloat32Array(0, 0.506494, 1)
+colors = PackedColorArray(0.974771, 0.613519, 0.368774, 1, 0.534985, 0.293827, 0.180589, 1, 0.592487, 0.3187, 1.92523e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yb8mu"]
+gradient = SubResource("Gradient_et3xt")
+
+[sub_resource type="Gradient" id="Gradient_sbv6n"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7ecj4"]
+gradient = SubResource("Gradient_sbv6n")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ika66"]
+specular_texture = SubResource("GradientTexture1D_7ecj4")
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0m6cl"]
+shader = ExtResource("32_sbv6n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.8
+shader_parameter/fps = 6.0
+shader_parameter/noise = ExtResource("33_7ecj4")
+
+[sub_resource type="FontVariation" id="FontVariation_glxj3"]
+base_font = ExtResource("34_xar77")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfvq4"]
+shader = ExtResource("5_t3us6")
+shader_parameter/jolt_strength_pixels = 1.0
+shader_parameter/jumps_per_second = 4.0
+shader_parameter/jitter_scale = 1.0
+shader_parameter/seed = 123.0
+shader_parameter/soften = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5hsy"]
+radius = 73.6951
+height = 399.881
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgyfp"]
+shader = ExtResource("5_t3us6")
+shader_parameter/jolt_strength_pixels = 1.0
+shader_parameter/jumps_per_second = 4.0
+shader_parameter/jitter_scale = 1.0
+shader_parameter/seed = 123.0
+shader_parameter/soften = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mgyfp"]
+radius = 61.1327
+height = 419.699
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmfat"]
+size = Vector2(1096, 707)
+
+[sub_resource type="Gradient" id="Gradient_xar77"]
+offsets = PackedFloat32Array(0, 0.981884)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0m6cl"]
+gradient = SubResource("Gradient_xar77")
+
+[node name="End" type="Node2D"]
+script = ExtResource("1_ika66")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_ql4ve")
+
+[node name="Waves" type="Sprite2D" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_kx0vo")
+position = Vector2(0, 442)
+scale = Vector2(1.1, 1)
+texture = ExtResource("3_t3us6")
+script = ExtResource("4_d0yn4")
+
+[node name="Waves2" type="Sprite2D" parent="Waves"]
+use_parent_material = true
+position = Vector2(2, 304)
+texture = ExtResource("3_t3us6")
+
+[node name="J_Folder" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="J" type="Sprite2D" parent="J_Folder"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_hfoao")
+use_parent_material = true
+position = Vector2(-712, -144)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("10_h8xgm")
+
+[node name="JFull" type="AnimatedSprite2D" parent="J_Folder"]
+z_index = 1
+material = SubResource("ShaderMaterial_yb8mu")
+use_parent_material = true
+position = Vector2(-152, -368)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_qfvq4")
+animation = &"A"
+
+[node name="Layer1" type="AnimatedSprite2D" parent="J_Folder/JFull"]
+material = SubResource("ShaderMaterial_pmfat")
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_mgyfp")
+animation = &"A"
+
+[node name="Layer2" type="AnimatedSprite2D" parent="J_Folder/JFull"]
+material = SubResource("ShaderMaterial_shnee")
+use_parent_material = true
+position = Vector2(3.27869, 0)
+sprite_frames = SubResource("SpriteFrames_71tud")
+animation = &"A"
+
+[node name="TextureRect2" type="TextureRect" parent="J_Folder/JFull"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 476.393
+offset_top = -459.672
+offset_right = 508.403
+offset_bottom = -422.372
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.85, 0.85)
+texture = SubResource("GradientTexture1D_hrrsx")
+
+[node name="JFull2" type="AnimatedSprite2D" parent="J_Folder"]
+z_index = 1
+material = SubResource("ShaderMaterial_yb8mu")
+use_parent_material = true
+position = Vector2(-152, -40)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_qfvq4")
+animation = &"B"
+
+[node name="Layer1" type="AnimatedSprite2D" parent="J_Folder/JFull2"]
+material = SubResource("ShaderMaterial_pmfat")
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_mgyfp")
+animation = &"B"
+
+[node name="Layer2" type="AnimatedSprite2D" parent="J_Folder/JFull2"]
+material = SubResource("ShaderMaterial_shnee")
+use_parent_material = true
+position = Vector2(3.27869, 0)
+sprite_frames = SubResource("SpriteFrames_71tud")
+animation = &"B"
+
+[node name="TextureRect2" type="TextureRect" parent="J_Folder/JFull2"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 476.393
+offset_top = -459.672
+offset_right = 508.403
+offset_bottom = -422.372
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.85, 0.85)
+texture = SubResource("GradientTexture1D_hrrsx")
+
+[node name="JFull3" type="AnimatedSprite2D" parent="J_Folder"]
+z_index = 1
+material = SubResource("ShaderMaterial_yb8mu")
+use_parent_material = true
+position = Vector2(-152, 304)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_qfvq4")
+animation = &"C"
+
+[node name="Layer1" type="AnimatedSprite2D" parent="J_Folder/JFull3"]
+material = SubResource("ShaderMaterial_pmfat")
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_mgyfp")
+animation = &"C"
+
+[node name="Layer2" type="AnimatedSprite2D" parent="J_Folder/JFull3"]
+material = SubResource("ShaderMaterial_shnee")
+use_parent_material = true
+position = Vector2(3.27869, 0)
+sprite_frames = SubResource("SpriteFrames_71tud")
+animation = &"C"
+
+[node name="TextureRect2" type="TextureRect" parent="J_Folder/JFull3"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 476.393
+offset_top = -459.672
+offset_right = 508.403
+offset_bottom = -422.372
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.85, 0.85)
+texture = SubResource("GradientTexture1D_hrrsx")
+
+[node name="JCloseup" type="Sprite2D" parent="J_Folder"]
+modulate = Color(1, 1, 1, 0.588235)
+z_index = -1
+texture_filter = 1
+position = Vector2(1176, 896)
+scale = Vector2(3.01, 3.01)
+texture = ExtResource("10_h8xgm")
+
+[node name="M_Folder" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="M" type="Sprite2D" parent="M_Folder"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_iv03m")
+use_parent_material = true
+position = Vector2(1000, -128)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("6_d0yn4")
+
+[node name="MCloseup" type="Sprite2D" parent="M_Folder"]
+modulate = Color(1, 1, 1, 0.588235)
+z_index = -1
+texture_filter = 1
+position = Vector2(1392, 976)
+scale = Vector2(3.01, 3.01)
+texture = ExtResource("6_d0yn4")
+
+[node name="MFull" type="AnimatedSprite2D" parent="M_Folder"]
+z_index = 1
+material = SubResource("ShaderMaterial_7vytj")
+use_parent_material = true
+position = Vector2(154, -366)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_h8xgm")
+animation = &"A"
+
+[node name="Layer1" type="AnimatedSprite2D" parent="M_Folder/MFull"]
+material = SubResource("ShaderMaterial_ika66")
+use_parent_material = true
+position = Vector2(-9.83607, 0)
+sprite_frames = SubResource("SpriteFrames_s1bme")
+animation = &"A"
+
+[node name="Layer2" type="AnimatedSprite2D" parent="M_Folder/MFull"]
+material = SubResource("ShaderMaterial_g5hsy")
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_hfoao")
+animation = &"A"
+
+[node name="TextureRect" type="TextureRect" parent="M_Folder/MFull"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 473.77
+offset_top = -459.016
+offset_right = 505.78
+offset_bottom = -421.716
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.85, 0.85)
+texture = SubResource("GradientTexture1D_yb8mu")
+
+[node name="MFull2" type="AnimatedSprite2D" parent="M_Folder"]
+z_index = 1
+material = SubResource("ShaderMaterial_7vytj")
+use_parent_material = true
+position = Vector2(154, -38)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_h8xgm")
+animation = &"B"
+
+[node name="Layer1" type="AnimatedSprite2D" parent="M_Folder/MFull2"]
+material = SubResource("ShaderMaterial_ika66")
+use_parent_material = true
+position = Vector2(-9.83607, 0)
+sprite_frames = SubResource("SpriteFrames_s1bme")
+animation = &"B"
+
+[node name="Layer2" type="AnimatedSprite2D" parent="M_Folder/MFull2"]
+material = SubResource("ShaderMaterial_g5hsy")
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_hfoao")
+animation = &"B"
+
+[node name="TextureRect" type="TextureRect" parent="M_Folder/MFull2"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 473.77
+offset_top = -459.016
+offset_right = 505.78
+offset_bottom = -421.716
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.85, 0.85)
+texture = SubResource("GradientTexture1D_yb8mu")
+
+[node name="MFull3" type="AnimatedSprite2D" parent="M_Folder"]
+z_index = 1
+material = SubResource("ShaderMaterial_7vytj")
+use_parent_material = true
+position = Vector2(154, 306)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_h8xgm")
+animation = &"C"
+
+[node name="Layer1" type="AnimatedSprite2D" parent="M_Folder/MFull3"]
+material = SubResource("ShaderMaterial_ika66")
+use_parent_material = true
+position = Vector2(-9.83607, 0)
+sprite_frames = SubResource("SpriteFrames_s1bme")
+animation = &"C"
+
+[node name="Layer2" type="AnimatedSprite2D" parent="M_Folder/MFull3"]
+material = SubResource("ShaderMaterial_g5hsy")
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_hfoao")
+animation = &"C"
+
+[node name="TextureRect" type="TextureRect" parent="M_Folder/MFull3"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 473.77
+offset_top = -459.016
+offset_right = 505.78
+offset_bottom = -421.716
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(0.85, 0.85)
+texture = SubResource("GradientTexture1D_yb8mu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WaveTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -560.0
+offset_right = 960.0
+offset_bottom = 564.64
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ika66")
+
+[node name="End" type="RichTextLabel" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_0m6cl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -824.0
+offset_top = -672.0
+offset_right = 1096.0
+offset_bottom = 408.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_glxj3")
+theme_override_font_sizes/normal_font_size = 30
+text = "One Day,
+We Held Hands"
+fit_content = true
+tab_size = 24
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="End2" type="RichTextLabel" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_0m6cl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1104.0
+offset_top = -656.0
+offset_right = 816.0
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_glxj3")
+theme_override_font_sizes/normal_font_size = 30
+text = "For The
+Last Time"
+fit_content = true
+tab_size = 24
+horizontal_alignment = 2
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HM_Final" type="Area2D" parent="." groups=["hands"]]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_qfvq4")
+use_parent_material = true
+script = ExtResource("15_yb8mu")
+
+[node name="HM_Final" type="Sprite2D" parent="HM_Final"]
+texture = ExtResource("15_s1bme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HM_Final"]
+position = Vector2(-160, -96)
+rotation = -0.574547
+shape = SubResource("CapsuleShape2D_g5hsy")
+
+[node name="HJ_Final" type="Area2D" parent="." groups=["hands"]]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_mgyfp")
+use_parent_material = true
+script = ExtResource("17_qfvq4")
+
+[node name="HJ_Final" type="Sprite2D" parent="HJ_Final"]
+texture = ExtResource("18_pmfat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HJ_Final"]
+position = Vector2(120, 0)
+rotation = 0.90294
+shape = SubResource("CapsuleShape2D_mgyfp")
+debug_color = Color(0.663426, 0.431477, 0.726919, 0.42)
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("hands")]
+script = ExtResource("19_qfvq4")
+hands = NodePath("../M_Folder/MFull3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pmfat")
+debug_color = Color(0.966998, 1.05888e-06, 0.477026, 0.42)
+
+[node name="Black" type="TextureRect" parent="Area2D"]
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -560.0
+offset_right = 960.0
+offset_bottom = 564.64
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_0m6cl")
+
+[connection signal="timeout" from="WaveTimer" to="Waves" method="_on_wave_timer_timeout"]
+[connection signal="input_event" from="HM_Final" to="HM_Final" method="_on_input_event"]
+[connection signal="mouse_entered" from="HM_Final" to="HM_Final" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HM_Final" to="HM_Final" method="_on_mouse_exited"]
+[connection signal="input_event" from="HJ_Final" to="HJ_Final" method="_on_input_event"]
+[connection signal="mouse_entered" from="HJ_Final" to="HJ_Final" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HJ_Final" to="HJ_Final" method="_on_mouse_exited"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0gut86bkaqc7"
+path="res://.godot/imported/Keys Take Rest A.wav-4b9d901438c5bb78a774eaf0b0938c51.sample"
+
+[deps]
+
+source_file="res://Audio/MFX/Keys Take Rest A.wav"
+dest_files=["res://.godot/imported/Keys Take Rest A.wav-4b9d901438c5bb78a774eaf0b0938c51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

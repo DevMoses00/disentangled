@@ -1,0 +1,304 @@
+[gd_scene load_steps=49 format=3 uid="uid://cmtkex640ej3u"]
+
+[ext_resource type="PackedScene" uid="uid://de5auj2s1l3bj" path="res://Scenes/slips.tscn" id="1_g83w8"]
+[ext_resource type="Script" uid="uid://fkl0fbbdjshh" path="res://Scripts/puzzle_space.gd" id="1_ssbjb"]
+[ext_resource type="Texture2D" uid="uid://dl2tdv1usyw37" path="res://Art/strips/c2_split/B.png" id="2_h031o"]
+[ext_resource type="PackedScene" uid="uid://cakblj7awo8lk" path="res://Scenes/slips-vert.tscn" id="2_qmdpn"]
+[ext_resource type="Texture2D" uid="uid://br0yrk2hwl5rl" path="res://Art/strips/c2_split/D.png" id="3_ssbjb"]
+[ext_resource type="Texture2D" uid="uid://dp8865nkgixg5" path="res://Art/strips/c2_split/A.png" id="3_tm8av"]
+[ext_resource type="Texture2D" uid="uid://c7h7nsroruje6" path="res://Art/strips/c2_split/F.png" id="4_m4qcw"]
+[ext_resource type="Texture2D" uid="uid://d2uqrboh7ydqn" path="res://Art/strips/a1_split/3.png" id="4_xf2ko"]
+[ext_resource type="Texture2D" uid="uid://cov4pphf4sdik" path="res://Art/strips/a1_split/1.png" id="5_brc8v"]
+[ext_resource type="Texture2D" uid="uid://c1y7i14eakg1a" path="res://Art/strips/b2_split/3.png" id="5_ul7x7"]
+[ext_resource type="Texture2D" uid="uid://tpj5vqq8drvb" path="res://Art/strips/a2_split/D.png" id="6_1t75r"]
+[ext_resource type="Texture2D" uid="uid://c2bctrvlhtojd" path="res://Art/strips/a1_split/5.png" id="6_h031o"]
+[ext_resource type="Texture2D" uid="uid://c8222yd8opsv" path="res://Art/strips/c1_split/3.png" id="6_iu42e"]
+[ext_resource type="Texture2D" uid="uid://dcetft566fnmu" path="res://Art/strips/c1_split/5.png" id="7_3xl8s"]
+[ext_resource type="Texture2D" uid="uid://h8svn1idnj0t" path="res://Art/strips/c1_split/1.png" id="8_n7d8g"]
+[ext_resource type="Texture2D" uid="uid://boxal5vslf4n4" path="res://Art/strips/b1_split/D.png" id="8_xt5n1"]
+[ext_resource type="Texture2D" uid="uid://cbjxftekpbm25" path="res://Art/strips/c2_split/E.png" id="9_tcs37"]
+[ext_resource type="Texture2D" uid="uid://cjlaj23aofktd" path="res://Art/strips/a2_split/F.png" id="10_31b66"]
+[ext_resource type="Texture2D" uid="uid://c2v7mekdy7mi0" path="res://Art/strips/c2_split/C.png" id="10_eabli"]
+[ext_resource type="Texture2D" uid="uid://40yxgsg1c4sg" path="res://Art/strips/a1_split/2.png" id="10_iu42e"]
+[ext_resource type="Texture2D" uid="uid://cu7yjjh4dfhll" path="res://Art/strips/b2_split/5.png" id="11_n16rc"]
+[ext_resource type="Texture2D" uid="uid://65efd1dfnx1u" path="res://Art/strips/a2_split/C.png" id="12_jrn12"]
+[ext_resource type="Texture2D" uid="uid://j4a5km2236aa" path="res://Art/strips/a1_split/6.png" id="12_n7d8g"]
+[ext_resource type="Texture2D" uid="uid://dyepad8jfewbd" path="res://Art/strips/c1_split/2.png" id="12_nnofw"]
+[ext_resource type="Texture2D" uid="uid://c5cnebp2ikmtt" path="res://Art/strips/c1_split/6.png" id="13_4o520"]
+[ext_resource type="Texture2D" uid="uid://ucxck16htpv4" path="res://Art/strips/c1_split/4.png" id="14_ixudt"]
+[ext_resource type="Texture2D" uid="uid://7c3crw1qhf1n" path="res://Art/strips/b1_split/F.png" id="14_rl5c3"]
+[ext_resource type="Texture2D" uid="uid://u56emiliflli" path="res://Art/strips/a1_split/4.png" id="14_tcs37"]
+[ext_resource type="Script" uid="uid://cnnw3yj3kwy0r" path="res://Scripts/barrier.gd" id="16_m4qcw"]
+[ext_resource type="Texture2D" uid="uid://chmsxv2phy02q" path="res://Art/strips/a2_split/E.png" id="16_q614q"]
+[ext_resource type="Shader" uid="uid://bpuuaesvar65o" path="res://Shaders/jolt.gdshader" id="17_eabli"]
+[ext_resource type="Texture2D" uid="uid://rcawr32getfb" path="res://Art/strips/b1_split/C.png" id="17_kfoqs"]
+[ext_resource type="Texture2D" uid="uid://cwcmrbcrfa25x" path="res://Art/hand_games/h1.png" id="17_tcs37"]
+[ext_resource type="Texture2D" uid="uid://da2ibgkouk2sk" path="res://Art/strips/a2_split/B.png" id="18_60dlv"]
+[ext_resource type="Texture2D" uid="uid://ctkootca5r5nc" path="res://Art/hand_games/h2.png" id="18_eabli"]
+[ext_resource type="Texture2D" uid="uid://cwa1kij7xbj1g" path="res://Art/hand_games/h3.png" id="19_nnofw"]
+[ext_resource type="Texture2D" uid="uid://e1xe4tv187b7" path="res://Art/hand_games/h4.png" id="20_4o520"]
+[ext_resource type="Texture2D" uid="uid://do72nho3d6d5r" path="res://Art/strips/b2_split/1.png" id="20_wpem1"]
+[ext_resource type="Texture2D" uid="uid://ckenhnpn262kk" path="res://Art/strips/a2_split/A.png" id="20_yf067"]
+[ext_resource type="Texture2D" uid="uid://l8vrwjy7tqe2" path="res://Art/strips/b1_split/E.png" id="23_fuifa"]
+[ext_resource type="Texture2D" uid="uid://cv2qu65kfd7ig" path="res://Art/strips/b1_split/B.png" id="26_r2t3c"]
+[ext_resource type="Texture2D" uid="uid://brmkna0uc2qkw" path="res://Art/strips/b1_split/A.png" id="29_lxh2k"]
+[ext_resource type="Texture2D" uid="uid://bocxfiso71dy7" path="res://Art/strips/b2_split/2.png" id="32_1te7j"]
+[ext_resource type="Texture2D" uid="uid://d1edtj1uhbag2" path="res://Art/strips/b2_split/6.png" id="35_lmn3g"]
+[ext_resource type="Texture2D" uid="uid://ch5i2odklo166" path="res://Art/strips/b2_split/4.png" id="38_xjlaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssbjb"]
+size = Vector2(1408, 1256)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nnofw"]
+shader = ExtResource("17_eabli")
+shader_parameter/jolt_strength_pixels = 1.0
+shader_parameter/jumps_per_second = 4.0
+shader_parameter/jitter_scale = 1.0
+shader_parameter/seed = 123.0
+shader_parameter/soften = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixudt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_tcs37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_eabli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nnofw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4o520")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PuzzleSpace" type="Node2D"]
+script = ExtResource("1_ssbjb")
+
+[node name="Slips3" parent="." instance=ExtResource("1_g83w8")]
+position = Vector2(-536, -152)
+sprite = ExtResource("6_iu42e")
+
+[node name="A" parent="Slips3" index="2"]
+texture = ExtResource("4_xf2ko")
+
+[node name="B" parent="Slips3" index="3"]
+visible = false
+texture = ExtResource("5_ul7x7")
+
+[node name="C" parent="Slips3" index="4"]
+visible = false
+texture = ExtResource("6_iu42e")
+
+[node name="SlipsD" parent="." instance=ExtResource("2_qmdpn")]
+position = Vector2(8, -600)
+
+[node name="CollisionShape2D" parent="SlipsD" index="1"]
+position = Vector2(91, 614)
+
+[node name="A" parent="SlipsD" index="2"]
+texture = ExtResource("6_1t75r")
+
+[node name="B" parent="SlipsD" index="3"]
+visible = false
+texture = ExtResource("8_xt5n1")
+
+[node name="C" parent="SlipsD" index="4"]
+visible = false
+texture = ExtResource("3_ssbjb")
+
+[node name="Slips5" parent="." instance=ExtResource("1_g83w8")]
+position = Vector2(-536, 232)
+
+[node name="A" parent="Slips5" index="2"]
+texture = ExtResource("6_h031o")
+
+[node name="B" parent="Slips5" index="3"]
+visible = false
+texture = ExtResource("11_n16rc")
+
+[node name="C" parent="Slips5" index="4"]
+visible = false
+texture = ExtResource("7_3xl8s")
+
+[node name="SlipsF" parent="." instance=ExtResource("2_qmdpn")]
+position = Vector2(392, -600)
+
+[node name="CollisionShape2D" parent="SlipsF" index="1"]
+position = Vector2(91, 614)
+
+[node name="A" parent="SlipsF" index="2"]
+texture = ExtResource("10_31b66")
+
+[node name="B" parent="SlipsF" index="3"]
+visible = false
+texture = ExtResource("14_rl5c3")
+
+[node name="C" parent="SlipsF" index="4"]
+visible = false
+texture = ExtResource("4_m4qcw")
+
+[node name="SlipsC" parent="." instance=ExtResource("2_qmdpn")]
+position = Vector2(-184, -600)
+
+[node name="CollisionShape2D" parent="SlipsC" index="1"]
+position = Vector2(91, 614)
+
+[node name="A" parent="SlipsC" index="2"]
+texture = ExtResource("12_jrn12")
+
+[node name="B" parent="SlipsC" index="3"]
+visible = false
+texture = ExtResource("17_kfoqs")
+
+[node name="C" parent="SlipsC" index="4"]
+visible = false
+texture = ExtResource("10_eabli")
+
+[node name="Slips1" parent="." instance=ExtResource("1_g83w8")]
+position = Vector2(-536, -536)
+
+[node name="A" parent="Slips1" index="2"]
+texture = ExtResource("5_brc8v")
+
+[node name="B" parent="Slips1" index="3"]
+visible = false
+texture = ExtResource("20_wpem1")
+
+[node name="C" parent="Slips1" index="4"]
+visible = false
+texture = ExtResource("8_n7d8g")
+
+[node name="SlipsE" parent="." instance=ExtResource("2_qmdpn")]
+position = Vector2(200, -600)
+
+[node name="CollisionShape2D" parent="SlipsE" index="1"]
+position = Vector2(91, 614)
+
+[node name="A" parent="SlipsE" index="2"]
+texture = ExtResource("16_q614q")
+
+[node name="B" parent="SlipsE" index="3"]
+visible = false
+texture = ExtResource("23_fuifa")
+
+[node name="C" parent="SlipsE" index="4"]
+visible = false
+texture = ExtResource("9_tcs37")
+
+[node name="SlipsB" parent="." instance=ExtResource("2_qmdpn")]
+position = Vector2(-376, -600)
+
+[node name="CollisionShape2D" parent="SlipsB" index="1"]
+position = Vector2(91, 614)
+
+[node name="A" parent="SlipsB" index="2"]
+texture = ExtResource("18_60dlv")
+
+[node name="B" parent="SlipsB" index="3"]
+visible = false
+texture = ExtResource("26_r2t3c")
+
+[node name="C" parent="SlipsB" index="4"]
+visible = false
+texture = ExtResource("2_h031o")
+
+[node name="SlipsA" parent="." instance=ExtResource("2_qmdpn")]
+position = Vector2(-568, -600)
+
+[node name="CollisionShape2D" parent="SlipsA" index="1"]
+position = Vector2(91, 614)
+
+[node name="A" parent="SlipsA" index="2"]
+texture = ExtResource("20_yf067")
+
+[node name="B" parent="SlipsA" index="3"]
+visible = false
+texture = ExtResource("29_lxh2k")
+
+[node name="C" parent="SlipsA" index="4"]
+visible = false
+texture = ExtResource("3_tm8av")
+
+[node name="Slips2" parent="." instance=ExtResource("1_g83w8")]
+position = Vector2(-536, -344)
+
+[node name="A" parent="Slips2" index="2"]
+texture = ExtResource("10_iu42e")
+
+[node name="B" parent="Slips2" index="3"]
+visible = false
+texture = ExtResource("32_1te7j")
+
+[node name="C" parent="Slips2" index="4"]
+visible = false
+texture = ExtResource("12_nnofw")
+
+[node name="Slips6" parent="." instance=ExtResource("1_g83w8")]
+position = Vector2(-536, 424)
+
+[node name="A" parent="Slips6" index="2"]
+texture = ExtResource("12_n7d8g")
+
+[node name="B" parent="Slips6" index="3"]
+visible = false
+texture = ExtResource("35_lmn3g")
+
+[node name="C" parent="Slips6" index="4"]
+visible = false
+texture = ExtResource("13_4o520")
+
+[node name="Slips4" parent="." instance=ExtResource("1_g83w8")]
+position = Vector2(-536, 40)
+
+[node name="A" parent="Slips4" index="2"]
+texture = ExtResource("14_tcs37")
+
+[node name="B" parent="Slips4" index="3"]
+visible = false
+texture = ExtResource("38_xjlaa")
+
+[node name="C" parent="Slips4" index="4"]
+visible = false
+texture = ExtResource("14_ixudt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-8, -16)
+zoom = Vector2(0.53, 0.53)
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("hands")]
+script = ExtResource("16_m4qcw")
+hands = NodePath("../Hands")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 52)
+shape = SubResource("RectangleShape2D_ssbjb")
+debug_color = Color(0.966998, 1.05888e-06, 0.477026, 0.42)
+
+[node name="Hands" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_nnofw")
+use_parent_material = true
+position = Vector2(32, -216)
+scale = Vector2(1.45, 1.45)
+sprite_frames = SubResource("SpriteFrames_ixudt")
+
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+
+[editable path="Slips3"]
+[editable path="SlipsD"]
+[editable path="Slips5"]
+[editable path="SlipsF"]
+[editable path="SlipsC"]
+[editable path="Slips1"]
+[editable path="SlipsE"]
+[editable path="SlipsB"]
+[editable path="SlipsA"]
+[editable path="Slips2"]
+[editable path="Slips6"]
+[editable path="Slips4"]

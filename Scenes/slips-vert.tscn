@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cakblj7awo8lk"]
+
+[ext_resource type="Script" uid="uid://spppkvsvcity" path="res://Scripts/slips.gd" id="1_3g5rp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mm1up"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uunmn"]
+size = Vector2(1121, 178.5)
+
+[node name="Slips" type="Area2D" groups=["strips"]]
+script = ExtResource("1_3g5rp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 180.0
+offset_top = 55.0
+offset_right = 1299.59
+offset_bottom = 235.0
+rotation = 1.5708
+texture = SubResource("CanvasTexture_mm1up")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(89, 615)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_uunmn")
+
+[node name="A" type="Sprite2D" parent="."]
+position = Vector2(92, 612)
+
+[node name="B" type="Sprite2D" parent="."]
+position = Vector2(92, 612)
+
+[node name="C" type="Sprite2D" parent="."]
+position = Vector2(92, 612)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

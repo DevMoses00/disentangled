@@ -17,8 +17,6 @@ func _on_input_event(viewport, event, shape_idx):
 		SoundManager.play_sfx(select)
 		drag_offset = global_position - get_global_mouse_position()
 		SlipManager.lock(self)
-	if event.is_action_released("Select"):
-		is_dragging = false
 
 
 func _input(event):

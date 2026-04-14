@@ -5,17 +5,23 @@ const CURSOR_SPEED := 900.0
 const DEADZONE := 0.2
 
 var controller_active := false
+var device_index := 0
 
 
 func _ready() -> void:
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
-	controller_active = Input.get_connected_joypads().size() > 0
-	if controller_active:
+	var pads := Input.get_connected_joypads()
+	if pads.size() > 0:
+		controller_active = true
+		device_index = pads[0]
 		get_viewport().warp_mouse(Vector2(960, 540))
 
 
-func _on_joy_connection_changed(_device: int, _connected: bool) -> void:
-	controller_active = Input.get_connected_joypads().size() > 0
+func _on_joy_connection_changed(device: int, connected: bool) -> void:
+	var pads := Input.get_connected_joypads()
+	controller_active = pads.size() > 0
+	if controller_active:
+		device_index = pads[0]
 
 
 func _process(delta: float) -> void:
@@ -23,8 +29,8 @@ func _process(delta: float) -> void:
 		return
 
 	var raw := Vector2(
-		Input.get_joy_axis(0, JOY_AXIS_LEFT_X),
-		Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
+		Input.get_joy_axis(device_index, JOY_AXIS_LEFT_X),
+		Input.get_joy_axis(device_index, JOY_AXIS_LEFT_Y)
 	)
 
 	var length := raw.length()

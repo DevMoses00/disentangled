@@ -42,15 +42,18 @@ func _process(delta: float) -> void:
 
 	var viewport := get_viewport()
 	var old_pos := viewport.get_mouse_position()
-	var new_pos := old_pos + stick * CURSOR_SPEED * delta
-	new_pos = new_pos.clamp(Vector2.ZERO, viewport.get_visible_rect().size)
+	var new_pos := (old_pos + stick * CURSOR_SPEED * delta).clamp(
+		Vector2.ZERO, viewport.get_visible_rect().size
+	)
 	viewport.warp_mouse(new_pos)
 
-	# Inject a mouse motion event so Area2D hover detection responds
+	# parse_input_event expects window coordinates, not viewport coordinates.
+	# get_final_transform() maps viewport space → window space.
+	var xform := viewport.get_final_transform()
 	var motion := InputEventMouseMotion.new()
-	motion.position = new_pos
-	motion.global_position = new_pos
-	motion.relative = new_pos - old_pos
+	motion.position = xform * new_pos
+	motion.global_position = xform * new_pos
+	motion.relative = xform.basis_xform(new_pos - old_pos)
 	Input.parse_input_event(motion)
 
 

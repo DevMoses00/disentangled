@@ -41,9 +41,17 @@ func _process(delta: float) -> void:
 	var stick := raw.normalized() * ((length - DEADZONE) / (1.0 - DEADZONE))
 
 	var viewport := get_viewport()
-	var new_pos := viewport.get_mouse_position() + stick * CURSOR_SPEED * delta
+	var old_pos := viewport.get_mouse_position()
+	var new_pos := old_pos + stick * CURSOR_SPEED * delta
 	new_pos = new_pos.clamp(Vector2.ZERO, viewport.get_visible_rect().size)
 	viewport.warp_mouse(new_pos)
+
+	# Inject a mouse motion event so Area2D hover detection responds
+	var motion := InputEventMouseMotion.new()
+	motion.position = new_pos
+	motion.global_position = new_pos
+	motion.relative = new_pos - old_pos
+	Input.parse_input_event(motion)
 
 
 func _input(event: InputEvent) -> void:

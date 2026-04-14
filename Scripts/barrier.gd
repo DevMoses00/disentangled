@@ -42,17 +42,23 @@ func _process(delta: float) -> void:
 
 
 func _tween_strip_out(strip: Node2D, direction: Vector2):
+	# Stop any active drag and prevent re-grabbing while the strip flies out
+	strip.is_dragging = false
+	strip.moveable = false
+
 	var tween := get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_IN)
 	var slide = ["Slide_1","Slide_2","Slide_3"].pick_random()
 	SoundManager.play_sfx(slide)
-	
+
 	var target_pos = strip.global_position + direction * tween_distance
-	
+
 	tween.tween_property(strip, "global_position", target_pos, tween_time)
 	await tween.finished
-	
+
+	# Release the selection lock so the player can pick up the next slip
+	SlipManager.release_lock(strip)
 	strip.queue_free()
 
 

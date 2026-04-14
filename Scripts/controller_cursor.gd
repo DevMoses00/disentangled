@@ -61,9 +61,11 @@ func _input(event: InputEvent) -> void:
 	if not controller_active:
 		return
 
-	# Bottom button (A / Cross) → simulate a left mouse click at the cursor
+	# Bottom button (A / Cross) → simulate a left mouse click at the cursor.
+	# Must use window-space coordinates, same as the motion event fix.
 	if event is InputEventJoypadButton and event.button_index == JOY_BUTTON_A:
-		var pos := get_viewport().get_mouse_position()
+		var viewport := get_viewport()
+		var pos := viewport.get_final_transform() * viewport.get_mouse_position()
 
 		var mouse_event := InputEventMouseButton.new()
 		mouse_event.button_index = MOUSE_BUTTON_LEFT
